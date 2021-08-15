@@ -16,6 +16,8 @@ namespace Goods
 
         int Day { get; }
 
+        Option Selection { get; }
+
         double GetDiscountCost (double perCent);
 
         double GetTransportChargeCost (double transportCharges);

@@ -4,14 +4,14 @@ namespace Goods
 {
     class Thing : IThing
     {
-        Option selection;
+        public Option Selection { get; }
         public Thing (Option selection, int day, int count = 1, double other = 0)
         {
             date = new DateTime (date.Year, date.Month, day);
 
             Count = count;
 
-            this.selection = selection;
+            Selection = selection;
 
             switch(selection)
             {
@@ -63,7 +63,7 @@ namespace Goods
 
         public string GetOption ()
         {
-            switch(selection)
+            switch(Selection)
             {
                 case Option.TotalCost:
                     return "Total cost";
