@@ -14,10 +14,14 @@ namespace Goods
 
         int Count { get; set; }
 
+        int Day { get; }
+
         double GetDiscountCost (double perCent);
 
         double GetTransportChargeCost (double transportCharges);
 
         double GetBonusCost (double bonusPrice);
+
+        string GetOption ();
     }
 }
