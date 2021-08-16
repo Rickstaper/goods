@@ -2,13 +2,13 @@
 
 namespace Goods
 {
-    class Thing : IThing
+    class Deal : IDeal
     {
         public Option Selection { get; }
 
         public DateTime date = new DateTime (2001, 12, 1);
 
-        public Thing (Option selection, int day, int count = 1, double other = 0)
+        public Deal (Option selection, int day, int count = 1, double other = 0)
         {
             date = new DateTime (date.Year, date.Month, day);
 
@@ -35,9 +35,9 @@ namespace Goods
             }
         }
 
-        public Thing (Option selection, int day, int count) : this (selection, day, count, 0) { }
+        public Deal (Option selection, int day, int count) : this (selection, day, count, 0) { }
 
-        public Thing (Option selection, int day, double other) : this (selection, day, 1, other) { }
+        public Deal (Option selection, int day, double other) : this (selection, day, 1, other) { }
 
         public double TotalCost { get; set; } = 5;
 
@@ -81,7 +81,7 @@ namespace Goods
 
         public int CompareTo(object o)
         {
-            IThing thing = o as IThing;
+            IDeal thing = o as IDeal;
 
             if (thing != null)
                 return this.Day.CompareTo (thing.Day);

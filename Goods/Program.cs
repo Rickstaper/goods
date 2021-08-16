@@ -6,7 +6,7 @@ namespace Goods
     {
         static void Main (string[] args)
         {
-            IThing[] things;
+            IDeal[] things;
             Interface.CreateThings (out things);
 
             Console.WriteLine ("First presentation of things:\n");
