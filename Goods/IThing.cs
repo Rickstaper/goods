@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Goods
 {
-    interface IThing
+    interface IThing : IComparable
     {
         double TotalCost { get; set; }
 

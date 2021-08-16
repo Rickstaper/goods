@@ -5,6 +5,9 @@ namespace Goods
     class Thing : IThing
     {
         public Option Selection { get; }
+
+        public DateTime date = new DateTime (2001, 12, 1);
+
         public Thing (Option selection, int day, int count = 1, double other = 0)
         {
             date = new DateTime (date.Year, date.Month, day);
@@ -42,8 +45,6 @@ namespace Goods
 
         public int Day => date.Day;
 
-        public DateTime date = new DateTime(2001, 12, 1);
-
         public int Count { get; set; } = 0;
 
         public double GetDiscountCost(double percent)
@@ -76,6 +77,16 @@ namespace Goods
             }
 
             return string.Empty;
+        }
+
+        public int CompareTo(object o)
+        {
+            IThing thing = o as IThing;
+
+            if (thing != null)
+                return this.Day.CompareTo (thing.Day);
+            else
+                throw new Exception ("Impossibility compare two objects.");
         }
     }
 }

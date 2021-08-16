@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Goods
 {
@@ -24,22 +20,6 @@ namespace Goods
                 new Thing(Option.DiscountCost, 10),
                 new Thing(Option.DiscountCost, 23, 15, 34.15)
             };
-        }
-
-        public static void DaysSort(ref IThing[] things)
-        {
-            for (int i = 0; i < things.Length; i++)
-            {
-                for (int j = 1; j < things.Length - i; j++)
-                {
-                    if (things[j - 1].Day > things[j].Day)
-                    {
-                        IThing temporary = things[j - 1];
-                        things[j - 1] = things[j];
-                        things[j] = temporary;
-                    }
-                }
-            }
         }
 
         public static void OptionSort(ref IThing[] things)
